@@ -15,7 +15,7 @@ export default function LogIn(props) {
     
       
         <Dog/>
-        <Text style={styles.text}>K O N N E C T</Text>
+        <Text style={styles.text}>  K O N N E C T</Text>
         <TextInput style={styles.inputBox} 
           style={styles.inputBox }
           onChangeText={text => setUsername(text)}
@@ -60,20 +60,21 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   inputBox: {
-    backgroundColor:'rgba(255, 255, 255, 0.3)',
+    backgroundColor:'rgba(255, 255, 255, 0.4)',
     borderRadius:35,
     paddingHorizontal:26,
     fontSize:16,
     height: 56,
     color: '#ffffff',
-    marginBottom: 10,
+    marginBottom: 20,
+    width: 230,
   },
   button : {
-    backgroundColor:'rgba(255, 255, 255, 0.3)',
+    backgroundColor:'rgba(255, 255, 255, 0.4)',
     borderRadius: 25,
     padding: 15,
     paddingHorizontal: 55,
-    marginBottom: 90
+    marginBottom: 130
   },
   buttonText: {
     fontSize:16,
