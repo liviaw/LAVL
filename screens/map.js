@@ -2,7 +2,6 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 function MapScreen({ navigation }) {
   return (
     <React.Fragment>
@@ -10,7 +9,9 @@ function MapScreen({ navigation }) {
         <Text>What adventure do you want to go on?</Text>
         <View style={styles.controlSpace}>
           <View style={styles.buttonView}>
+            
             <Button
+              color="#fff"
               onPress={() => {
                 navigation.navigate('Chat');
               }}
@@ -19,6 +20,7 @@ function MapScreen({ navigation }) {
           </View>
           <View style={styles.buttonView}>
             <Button
+              color="#fff"
               onPress={() => {
                 navigation.navigate('Game');
               }}
@@ -46,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fcfafc',
     // position: relative;
     // backgroundColor: '#fff';
     // borderWidth: 40;
