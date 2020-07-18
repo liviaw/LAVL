@@ -14,8 +14,6 @@ import GameScreen from './screens/game';
 import LoadingScreen from './screens/loading';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Entypo from 'react-native-vector-icons/';
-import SimpleLineIcons from 'react-native-vector-icons/';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -29,6 +27,10 @@ export default function App() {
 
   function HomePage() {
     setSign(4);
+  }
+
+  function sadPet() {
+    setHappiness(50);
   }
 
   if (sign == 4) {
@@ -55,7 +57,7 @@ export default function App() {
             },
           })}
           tabBarOptions={{
-            activeTintColor: 'purple',
+            activeTintColor: 'green',
             inactiveTintColor: 'gray',
           }}
         >
