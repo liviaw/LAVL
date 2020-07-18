@@ -9,7 +9,6 @@ export default function Dog() {
             width:200,
             height:200,
             marginBottom: 10,
-            marginTop: 100,
             
         }
     });

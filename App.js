@@ -20,13 +20,17 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [sign, setSign] = useState(1);
-  const [happiness, setHappiness] = useState(50);
+  const [happiness, setHappiness] = useState(80);
   function SignedIn () {
     setSign(2);
   }
 
   function HomePage() {
     setSign(4);
+  }
+
+  function sadPet() {
+    setHappiness(50);
   }
 
   if (sign == 4) {
