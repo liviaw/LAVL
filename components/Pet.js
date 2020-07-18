@@ -8,7 +8,6 @@ export default class Pet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      happiness: 50,
       isVisible: false,
     }
   }
@@ -18,21 +17,19 @@ export default class Pet extends React.Component {
       <View>
         <Overlay isVisible={this.state.isVisible}
           onBackdropPress={() => this.setState({ isVisible: false })}>
-          <Text>Stats here</Text>
+          <Text>Your pet grew!</Text>
         </Overlay>
-        <View>
+        <View style={{marginTop: 50 }}>
           <Rating
             type='heart'
-            imageSize={30}
+            imageSize={40}
             readonly
-            startingValue={this.state.happiness / 100 * 5}
+            startingValue={this.props.happiness / 100 * 5}
           />
-          <TouchableHighlight onPress={() => this.setState({ isVisible: true })}>
           <Image
             style={styles.tinyLogo}
             source={require('../assets/jack-russel-looping.gif')}
           />
-          </TouchableHighlight>
           <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'stretch', marginHorizontal: 20 }}>
             <View style={{ flex: 1, height: 50 }} >
               <View><Text style={{ color: "grey" }}> Dog - Jack Russel</Text>
@@ -62,7 +59,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 20
+    marginTop: 100
   },
   tinyLogo: {
     width: 400,

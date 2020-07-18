@@ -15,6 +15,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   const [sign, setSign] = useState(1);
+  const [happiness, setHappiness] = useState(50);
   function SignedIn () {
     setSign(2);
   }
@@ -27,11 +28,15 @@ export default function App() {
     return (
       <NavigationContainer>
         <Tab.Navigator>
-          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Home">
+          {() => <HomeScreen happiness={happiness} setHappiness={setHappiness} />}
+            </Tab.Screen>
           <Tab.Screen name="Map" component={MapScreen} />
           <Tab.Screen name="Chat" component={ChatScreen} />
           <Tab.Screen name="Settings" component={SettingsScreen} />
-          <Tab.Screen name="Game" component={GameScreen} />
+          <Tab.Screen name="Game" >
+          {() => <GameScreen happiness={happiness} setHappiness={setHappiness} />}
+            </Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
     )

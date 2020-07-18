@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Pet from '../components/Pet'
 
-function HomeScreen() {
+function HomeScreen(props) {
   return (
     <View style={styles.container }>
-      <Pet /> 
+      <Pet happiness={props.happiness} setHappiness={props.setHappiness}/> 
     </View>
   );
 }
