@@ -12,8 +12,6 @@ import SelectAvatar from './screens/SelectAvatar';
 import GameScreen from './screens/game';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Entypo from 'react-native-vector-icons/';
-import SimpleLineIcons from 'react-native-vector-icons/';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +46,7 @@ export default function App() {
               } else if (route.name==='Game') {
                 iconName = focused
                   ? 'md-football'
-                  : 'md-football';
+                  : 'ios-football';
               }
 
               // You can return any component that you like here!
