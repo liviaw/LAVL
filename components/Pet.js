@@ -1,29 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { Rating } from 'react-native-elements';
-
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import { Rating, Overlay } from 'react-native-elements';
 
 
 export default class Pet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      happiness: 50,
+      isVisible: false,
+    }
+  }
+
   render() {
     return (
       <View>
-        <Text> dsadsa</Text>
-        <View style={styles.container}>
+        <Overlay isVisible={this.state.isVisible}
+          onBackdropPress={() => this.setState({ isVisible: false })}>
+          Stats here
+        </Overlay>
+        <View>
           <Rating
             type='heart'
-            imageSize={20}
+            imageSize={30}
             readonly
-            startingValue={4}
+            startingValue={this.state.happiness / 100 * 5}
           />
+          <TouchableHighlight onPress={() => this.setState({ isVisible: true })}>
           <Image
             style={styles.tinyLogo}
             source={require('../assets/jack-russel-looping.gif')}
           />
-          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'stretch' }}>
-            <View style={{ flex: 1, height: 50}} >
-              <View><Text> Dog . Jack Russel</Text>
+          </TouchableHighlight>
+          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'stretch', marginHorizontal: 20 }}>
+            <View style={{ flex: 1, height: 50 }} >
+              <View><Text style={{ color: "grey" }}> Dog - Jack Russel</Text>
               </View>
               <View>
                 <Text>John Smith</Text>
@@ -31,7 +43,7 @@ export default class Pet extends React.Component {
             </View>
             <View style={{ flex: 1, height: 50, alignItems: 'flex-end' }} >
               <View>
-                <Text> Birthdate</Text>
+                <Text style={{ color: "grey" }}> Birthdate</Text>
               </View>
               <View>
                 <Text>
@@ -50,6 +62,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    marginTop: 20
   },
   tinyLogo: {
     width: 400,
