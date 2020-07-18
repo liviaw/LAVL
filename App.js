@@ -11,6 +11,10 @@ import LogIn from './screens/LogIn';
 import SelectAvatar from './screens/SelectAvatar';
 import GameScreen from './screens/game';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/';
+import SimpleLineIcons from 'react-native-vector-icons/';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -26,7 +30,37 @@ export default function App() {
   if (sign == 4) {
     return (
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+
+              if (route.name === 'Home') {
+                iconName = focused
+                  ? 'ios-home'
+                  : 'md-home';
+              } else if (route.name === 'Map') {
+                iconName = focused ? 'ios-map' : 'md-map';
+              } else if (route.name==='Chat') {
+                iconName = focused
+                  ? 'chatbubbles-outline'
+                  : 'chatbubbles';
+              } else if (route.name==='Game') {
+                iconName = focused
+                  ? 'ios-game-controller-outline'
+                  : 'ios-game-controller';
+              }
+
+              // You can return any component that you like here!
+              
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: 'purple',
+            inactiveTintColor: 'gray',
+          }}
+        >
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Map" component={MapScreen} />
           <Tab.Screen name="Chat" component={ChatScreen} />
