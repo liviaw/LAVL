@@ -15,6 +15,9 @@ const screens = {
   Chat: {
     screen: Chat,
   },
+  Game: {
+    screen: Game,
+  },
 };
 
 const HomeStack = createStackNavigator(screens);

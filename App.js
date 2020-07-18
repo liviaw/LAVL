@@ -7,6 +7,7 @@ import HomeScreen from './screens/home';
 import MapScreen from './screens/map';
 import ChatScreen from './screens/chat';
 import SettingsScreen from './screens/settings';
+import GameScreen from './screens/game';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Chat" component={ChatScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Game" component={GameScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

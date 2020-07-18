@@ -16,7 +16,7 @@ function MapScreen({ navigation }) {
 
       <Button
         onPress={() => {
-          navigation.navigate('Chat');
+          navigation.navigate('Game');
         }}
         title="Game"
       />
