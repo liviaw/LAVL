@@ -5,9 +5,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function SelectAvatar(props) {
     return (
+        <ImageBackground source={require('./back.png')} style={styles.image}>
         <View style={styles.container}>
             <Text style={styles.text}>Choose Your Pet:</Text>
-            <ImageBackground source={require('./back.png')} style={styles.image}>
+            
             <Image
             style={styles.tinyLogo}
             source={require('./kitten.png')}
@@ -32,22 +33,21 @@ export default function SelectAvatar(props) {
             <TouchableOpacity style={styles.button} onPress={() => props.signedIn()}>
           <Text style={styles.buttonText}> PICK ME! </Text>
         </TouchableOpacity>
-        </ImageBackground>
 
         </View>
+        </ImageBackground>
     )
 
 }
 
 const styles = StyleSheet.create({
     container : {
-      backgroundColor: "#8E7EFB",
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     text: {
-        marginTop: 100,
+        marginBottom: 50,
         color: "black",
         fontSize: 30,
         fontWeight: "bold"
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     image: {
       flex: 1,
       resizeMode: "cover",
-      justifyContent: "center"
+      justifyContent: "center",
     },
     button : {
         backgroundColor:'rgba(255, 255, 255, 0.3)',

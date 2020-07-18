@@ -13,6 +13,10 @@ import SelectAvatar from './screens/SelectAvatar';
 import GameScreen from './screens/game';
 import LoadingScreen from './screens/loading';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/';
+import SimpleLineIcons from 'react-native-vector-icons/';
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -28,26 +32,38 @@ export default function App() {
 
   if (sign == 4) {
     return (
-      <React.Fragment>
-        <NavigationContainer>
-          <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Chat" component={ChatScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
-            <Tab.Screen name="Game" component={GameScreen} />
-          </Tab.Navigator>
-          {/* <Stack.Navigator>
-          <Stack.Screen name="Loading" component={LoadingScreen} />
-        </Stack.Navigator> */}
-        </NavigationContainer>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
-        {/* <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Loading" component={LoadingScreen} />
-          </Stack.Navigator>
-        </NavigationContainer> */}
-      </React.Fragment>
+              if (route.name === 'Home') {
+                iconName = focused ? 'ios-home' : 'md-home';
+              } else if (route.name === 'Map') {
+                iconName = focused ? 'ios-map' : 'md-map';
+              } else if (route.name === 'Chat') {
+                iconName = focused ? 'ios-chatboxes' : 'ios-chatbubbles';
+              } else if (route.name === 'Game') {
+                iconName = focused ? 'md-football' : 'md-football';
+              }
+
+              // You can return any component that you like here!
+
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: 'purple',
+            inactiveTintColor: 'gray',
+          }}
+        >
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Map" component={MapScreen} />
+          <Tab.Screen name="Chat" component={ChatScreen} />
+          <Tab.Screen name="Game" component={GameScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
     );
   } else if (sign == 2) {
     return <SelectAvatar signedIn={HomePage} />;
