@@ -18,7 +18,7 @@ export default class Pet extends React.Component {
       <View>
         <Overlay isVisible={this.state.isVisible}
           onBackdropPress={() => this.setState({ isVisible: false })}>
-          Stats here
+          <Text>Stats here</Text>
         </Overlay>
         <View>
           <Rating
