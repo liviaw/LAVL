@@ -4,46 +4,59 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 function MapScreen({ navigation }) {
   return (
-    <React.Fragment>
-      <View style={styles.map}>
-        <Text>What adventure do you want to go on?</Text>
-        <View style={styles.controlSpace}>
-          <View style={styles.buttonView}>
-            
-            <Button
-              color="#fff"
-              onPress={() => {
-                navigation.navigate('Chat');
-              }}
-              title="Chat"
-            />
-          </View>
-          <View style={styles.buttonView}>
-            <Button
-              color="#fff"
-              onPress={() => {
-                navigation.navigate('Game');
-              }}
-              title="Game"
-            />
-          </View>
-        </View>
-      </View>
+    <View>
+      <Image
+        source={require('../assets/walking.gif')}
+        style={styles.backgroundImage}
+      />
+    </View>
 
-      {/* Travelling image - to be on loading screen */}
-      <View>
-        <Image source={require('../assets/walk.gif')} />
-      </View>
+    // <React.Fragment>
+    //   <View style={styles.map}>
+    //     <Text>What adventure do you want to go on?</Text>
+    //     <View style={styles.controlSpace}>
+    //       <View style={styles.buttonView}>
 
-      {/* Two pets talking to each other */}
-      {/* <View>
-        <Image source={require('../assets/test.png')} />
-      </View> */}
-    </React.Fragment>
+    //         <Button
+    //           color="#fff"
+    //           onPress={() => {
+    //             navigation.navigate('Chat');
+    //           }}
+    //           title="Chat"
+    //         />
+    //       </View>
+    //       <View style={styles.buttonView}>
+    //         <Button
+    //           color="#fff"
+    //           onPress={() => {
+    //             navigation.navigate('Game');
+    //           }}
+    //           title="Game"
+    //         />
+    //       </View>
+    //     </View>
+    //   </View>
+
+    //   {/* Travelling image - to be on loading screen */}
+    //   <View>
+    //     <Image source={require('../assets/cat-walk.gif')} />
+    //   </View>
+
+    //   {/* Two pets talking to each other */}
+    //   {/* <View>
+    //     <Image source={require('../assets/test.png')} />
+    //   </View> */}
+    // </React.Fragment>
   );
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    // flex: 1,
+    resizeMode: 'stretch',
+    width: 410,
+    height: 700,
+  },
   map: {
     flex: 1,
     justifyContent: 'center',

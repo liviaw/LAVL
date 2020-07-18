@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 function LoadingScreen({ navigation }) {
   return (
     <View>
-      <Image source={require('../assets/walk.gif')} />
+      <Image source={require('../assets/cat-walk.gif')} />
     </View>
   );
 }
