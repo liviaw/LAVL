@@ -7,8 +7,9 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 export default function Dog() {
     const styles = StyleSheet.create({
         tinyLogo: {
-            width:125,
-            height:125,
+            width:200,
+            height:200,
+            marginBottom: 10,
             
         }
     });
