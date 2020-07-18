@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [sign, setSign] = useState(1);
-  const [happiness, setHappiness] = useState(80);
+  const [happiness, setHappiness] = useState(50);
   function SignedIn () {
     setSign(2);
   }
@@ -57,7 +57,7 @@ export default function App() {
             },
           })}
           tabBarOptions={{
-            activeTintColor: 'purple',
+            activeTintColor: 'green',
             inactiveTintColor: 'gray',
           }}
         >

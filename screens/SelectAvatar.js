@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function SelectAvatar(props) {
     return (
-        <ImageBackground source={require('./back.png')} style={styles.image}>
+        <ImageBackground source={require('./back-tree.png')} style={styles.image}>
         <View style={styles.container}>
             <Text style={styles.text}>Choose Your Pet:</Text>
             
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         backgroundColor:'rgba(255, 255, 255, 0.3)',
         borderRadius: 25,
         marginVertical: 10, 
-        paddingVertical: 12
+        padding: 12
     },
     buttonText: {
         fontSize:16,

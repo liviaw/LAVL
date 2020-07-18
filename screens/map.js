@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: 'white',
     borderRadius: 6,
-    backgroundColor: '#8E7EFB',
+    backgroundColor: '#c0d8ae',
   },
 });
 

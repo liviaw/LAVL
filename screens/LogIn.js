@@ -1,8 +1,8 @@
   
 import React, {useState} from 'react';
+import Dog from './Dog';
 import { StyleSheet, ImageBackground, Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import Dog from './Dog';
 
 export default function LogIn(props) {
   const [username, setUsername] = useState("");
@@ -10,34 +10,33 @@ export default function LogIn(props) {
   const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
-    <ImageBackground source={require('./back.png')} style={styles.image}>
     <View style={styles.container}>
+    <ImageBackground source={require('./back-tree.png')} style={styles.image}>
+    
       
-   <Dog/>
+        <Dog/>
         <Text style={styles.text}>K O N N E C T</Text>
         <TextInput style={styles.inputBox} 
           style={styles.inputBox }
           onChangeText={text => setUsername(text)}
           placeholderTextColor= '#ffffff'
-          placeholder="Enter your username"
+          placeholder="Your pet's name"
         />
         <TextInput style={styles.inputBox} 
           style={styles.inputBox }
           onChangeText={text => setPassword(text)}
           placeholderTextColor= '#ffffff'
           secureTextEntry={true}
-          placeholder="Enter your password"
+          placeholder="Your password"
         />
 
         <TouchableOpacity style={styles.button} onPress={() => props.signedIn()}>
           <Text style={styles.buttonText}> SIGN UP </Text>
         </TouchableOpacity>
 
-      
 
-    </View>
-    </ImageBackground>
-
+</ImageBackground>
+</View>
     )
 
     // height: 40, borderColor: 'black', borderWidth: 1
@@ -52,26 +51,29 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     resizeMode: "cover",
+    justifyContent: "center",
+    padding: 150,
   },
   text: {
     color: "black",
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: "bold"
   },
   inputBox: {
     backgroundColor:'rgba(255, 255, 255, 0.3)',
     borderRadius:35,
-    paddingHorizontal:16,
+    paddingHorizontal:26,
     fontSize:16,
     height: 56,
     color: '#ffffff',
-    marginVertical: 10,
+    marginBottom: 10,
   },
   button : {
     backgroundColor:'rgba(255, 255, 255, 0.3)',
     borderRadius: 25,
-    marginVertical: 10, 
-    paddingVertical: 12
+    padding: 15,
+    paddingHorizontal: 55,
+    marginBottom: 90
   },
   buttonText: {
     fontSize:16,
