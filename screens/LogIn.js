@@ -1,6 +1,5 @@
   
 import React, {useState} from 'react';
-import LoginScreen from "react-native-login-screen";
 import Dog from './Dog';
 import { StyleSheet, ImageBackground, Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
