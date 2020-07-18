@@ -43,12 +43,12 @@ export default function App() {
                 iconName = focused ? 'ios-map' : 'md-map';
               } else if (route.name==='Chat') {
                 iconName = focused
-                  ? 'chatbubbles-outline'
-                  : 'chatbubbles';
+                  ? 'ios-chatboxes'
+                  : 'ios-chatbubbles';
               } else if (route.name==='Game') {
                 iconName = focused
-                  ? 'ios-game-controller-outline'
-                  : 'ios-game-controller';
+                  ? 'md-football'
+                  : 'md-football';
               }
 
               // You can return any component that you like here!
