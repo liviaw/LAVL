@@ -3,14 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import LoginScreen from "react-native-login-screen";
 import HomeScreen from './screens/home';
 import MapScreen from './screens/map';
 import ChatScreen from './screens/chat';
 import SettingsScreen from './screens/settings';
 import LogIn from './screens/LogIn';
 import SelectAvatar from './screens/SelectAvatar';
-
+import GameScreen from './screens/game';
 
 const Tab = createBottomTabNavigator();
 
