@@ -1,19 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, ImageBackground } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  ImageBackground,
+} from 'react-native';
 import { Rating, Overlay } from 'react-native-elements';
-
 
 export default class Pet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isVisible: false,
-      age: false
-    }
+      age: false,
+    };
   }
-
-
 
   render() {
     return (
@@ -41,23 +45,20 @@ export default class Pet extends React.Component {
                 <Text style={styles.text}>Buddy The Good Boi</Text>
               </View>
             </View>
-            <View style={{ flex: 1, height: 50, alignItems: 'flex-end' }} >
+            <View style={{ flex: 1, height: 50, alignItems: 'flex-end' }}>
               <View>
                 <Text style={styles.boldText}> Birthdate</Text>
               </View>
               <View>
-                <Text style={styles.text}>
-                  10 July 2020
-                </Text>
+                <Text style={styles.text}>10 July 2020</Text>
               </View>
             </View>
           </View>
         </View>
       </View>
-      
-    )
+    );
   }
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -68,15 +69,15 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 10,
-    color: "grey",
+    color: 'grey',
     fontSize: 12,
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   boldText: {
     marginTop: 10,
-    color: "black",
+    color: 'black',
     fontSize: 12,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   smallLogo: {
     width: 300,
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
+    resizeMode: 'cover',
     padding: 90,
   },
 });
