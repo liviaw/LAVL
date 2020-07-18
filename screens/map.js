@@ -1,12 +1,25 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function MapScreen() {
+function MapScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Map!</Text>
+      <Text>What would you like to do?</Text>
+      <Button
+        onPress={() => {
+          navigation.navigate('Chat');
+        }}
+        title="Chat"
+      />
+
+      <Button
+        onPress={() => {
+          navigation.navigate('Chat');
+        }}
+        title="Game"
+      />
     </View>
   );
 }
