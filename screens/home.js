@@ -4,20 +4,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Pet from '../components/Pet'
 
-function HomeScreen() {
+function HomeScreen(props) {
   return (
-    <ImageBackground source={require('./back_light.png')} style={styles.image}>
+    
     <View style={styles.container }>
-      <Pet /> 
+      <Pet happiness={props.happiness} setHappiness={props.setHappiness}/> 
     </View>
-    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20
+    marginTop: 20,
+    backgroundColor: '#fff'
   },
   tinyLogo: {
     width: 400,

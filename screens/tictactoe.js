@@ -78,14 +78,16 @@ export default class TicTacToe extends React.Component {
         // switch player
         let nextPlayer = (currentPlayer == 1) ? -1 : 1;
         this.setState({currentPlayer: nextPlayer});
-
+        this.props.onChangePlayer(nextPlayer);
         // check for winner 
         let winner = this.getWinner();
         if (winner == 1) {
             Alert.alert("You won! :)");
+            this.props.setHappiness(this.props.happiness + 25);
             this.initializeGame();
         } else if (winner == -1) {
             Alert.alert("You lost! :(");
+            this.props.setHappiness(this.props.happiness + 10);
             this.initializeGame();
         }
     }
@@ -143,7 +145,6 @@ export default class TicTacToe extends React.Component {
                 </View>
 
                 <View style={{paddingTop:50}}/>
-                <Button title="New Game" onPress={this.onNewGamePress}/>
             </View>
 
         );

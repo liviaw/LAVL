@@ -1,6 +1,5 @@
   
 import React, {useState} from 'react';
-import Dog from './Dog';
 import { StyleSheet, ImageBackground, Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -12,7 +11,7 @@ export default function LogIn(props) {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('./back.png')} style={styles.image}>
-        <Dog/>
+        
         <Text style={styles.text}>K O N N E C T</Text>
         <TextInput style={styles.inputBox} 
           style={styles.inputBox }

@@ -1,38 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, ImageBackground } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  ImageBackground,
+} from 'react-native';
 import { Rating, Overlay } from 'react-native-elements';
-
 
 export default class Pet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      happiness: 50,
       isVisible: false,
-      age: false
-    }
+      age: false,
+    };
   }
-
-
 
   render() {
     return (
-      
       <View style={styles.container}>
-        <View>
+        <Overlay isVisible={this.state.isVisible}
+          onBackdropPress={() => this.setState({ isVisible: false })}>
+          <Text>Your pet grew!</Text>
+        </Overlay>
+        <View style={{marginTop: 50 }}>
           <Rating
             type='heart'
-            imageSize={30}
+            imageSize={40}
             readonly
-            startingValue={this.state.happiness / 100 * 5}
+            startingValue={this.props.happiness / 100 * 5}
           />
-          <TouchableHighlight onPress={() => this.setState({ isVisible: true })}>
           <Image
             style={this.age ? styles.mediumLogo  : styles.smallLogo} 
             source={require('../assets/jack-russel-looping.gif')}
           />
-          </TouchableHighlight>
           <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'stretch', marginHorizontal: 20 }}>
             <View style={{ flex: 1, height: 50 }} >
               <View><Text style={styles.boldText}> Dog - Beagle</Text>
@@ -41,41 +45,39 @@ export default class Pet extends React.Component {
                 <Text style={styles.text}>Buddy The Good Boi</Text>
               </View>
             </View>
-            <View style={{ flex: 1, height: 50, alignItems: 'flex-end' }} >
+            <View style={{ flex: 1, height: 50, alignItems: 'flex-end' }}>
               <View>
                 <Text style={styles.boldText}> Birthdate</Text>
               </View>
               <View>
-                <Text style={styles.text}>
-                  10 July 2020
-                </Text>
+                <Text style={styles.text}>10 July 2020</Text>
               </View>
             </View>
           </View>
         </View>
       </View>
-      
-    )
+    );
   }
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 10,
   },
   text: {
     marginTop: 10,
-    color: "grey",
+    color: 'grey',
     fontSize: 12,
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   boldText: {
     marginTop: 10,
-    color: "black",
+    color: 'black',
     fontSize: 12,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   smallLogo: {
     width: 300,
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    resizeMode: "cover",
+    resizeMode: 'cover',
     padding: 90,
   },
 });
