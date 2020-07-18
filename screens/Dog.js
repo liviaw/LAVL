@@ -8,7 +8,7 @@ export default function Dog() {
         tinyLogo: {
             width:200,
             height:200,
-            marginBottom: 10,
+            marginLeft: 17,
             
         }
     });
