@@ -64,7 +64,6 @@ export default function App() {
             </Tab.Screen>
           <Tab.Screen name="Map" component={MapScreen} />
           <Tab.Screen name="Chat" component={ChatScreen} />
-          <Tab.Screen name="Settings" component={SettingsScreen} />
           <Tab.Screen name="Game" >
           {() => <GameScreen happiness={happiness} setHappiness={setHappiness} />}
             </Tab.Screen>
