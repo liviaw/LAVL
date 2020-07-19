@@ -5,37 +5,48 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import MapView, { UrlTile }  from 'react-native-maps';
 import ModalTester from './modal';
+import Modal from 'react-native-modal';
 
 
 export default class MapScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: false,
+      // isVisible: false,
+      isModalVisible: false,
     };
   }
+
+  showModal = () => {
+    this.setState = {
+      isModalVisible:true
+    }
+    // return (
+    //   <View style={{marginTop:50}}>
+    //       <Modal isVisible={this.state.isModalVisible}>
+    //         <View style={{ flex: 1 }}>
+    //         <Text>This is the modal content for now!</Text>
+    //         </View> 
+    //       </Modal>
+    //     </View>
+    // );
+  };
 
   render() {
     return (
       <View style={styles.container}>
         
         <MapView
-        style={styles.map}
-        
-        initialRegion={{
-          latitude: -33.909990,
-          longitude: 151.222970,
-          latitudeDelta: 0.0982,
-          longitudeDelta: 0.0421,
-        }}
-      >
-        {/* <View style={styles.modal}>
-          <Overlay isVisible={this.state.isVisible} >
-          <Text>hi!</Text>
-          </Overlay>
-        </View> */}
-        <ModalTester/>
-
+          style={styles.map}
+          
+          initialRegion={{
+            latitude: -33.909990,
+            longitude: 151.222970,
+            latitudeDelta: 0.0982,
+            longitudeDelta: 0.0421,
+          }}
+          >
+            
         <MapView.Marker draggable
           coordinate={{
             latitude: -33.9173,
@@ -44,35 +55,55 @@ export default class MapScreen extends React.Component {
         >
         <Image
         style={styles.gifLogo}
-        source={require('../assets/jack-russel-looping.gif')}
+        source={require('./puppy.png')}
       />
       </MapView.Marker>
-
-
-
-      <MapView.Marker
-        coordinate={{
-          latitude: -33.849300,
-          longitude: 151.182440,
-        }}
-        title="Sydey Opera House"
-        description="dog"> 
-          <Image
-        style={styles.gifLogo}
-        source={require('../assets/doggo.gif')}
-      />
-        </MapView.Marker>
 
         <MapView.Marker
         coordinate={{
           latitude: -33.849300,
           longitude: 151.182440,
-        }}> 
+        }}
+        title="Chimpy the Monkey"
+        description="Age: 13 days old"
+        onCalloutPress={() => this.showModal()}> 
           <Image
         style={styles.gifLogo}
-        source={require('../assets/doggo.gif')}
-      />
+        source={require('./monkey.png')}
+        />
+        <MapView.Callout>
+          <View>
+            <Text>CHIMPY THE MONKEY</Text>
+            <Text>13 days old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
+
+        <MapView.Marker
+        coordinate={{
+          latitude: -33.849300,
+          longitude: 151.222440,
+        }}> 
+        <View>
+        <TouchableOpacity onPress={()=>this.showModal()}>
+            <Image style={styles.gifLogo} source={require('./kitten.png')} />
+        </TouchableOpacity>
+        {/* <Modal isVisible={this.state.isModalVisible}>
+          <View style={{ flex: 1 }}>
+          <Text>This is the modal content for now!</Text>
+          </View> 
+        </Modal> */}
+        </View>
+        <MapView.Callout>
+          <View>
+            <Text>KITTY THE CAT</Text>
+            <Text>13 days old</Text>
+          </View>
+        </MapView.Callout>
+       </MapView.Marker>
+
+
+
 
         <MapView.Marker
         coordinate={{
@@ -83,6 +114,12 @@ export default class MapScreen extends React.Component {
         style={styles.gifLogo}
         source={require('../assets/doggo.gif')}
       />
+      <MapView.Callout>
+          <View>
+            <Text>REX THE DOG</Text>
+            <Text>3 days old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
 
         <MapView.Marker
@@ -94,6 +131,12 @@ export default class MapScreen extends React.Component {
         style={styles.gifLogo}
         source={require('../assets/doggo.gif')}
       />
+      <MapView.Callout>
+          <View>
+            <Text>TREX THE DOGGO</Text>
+            <Text>1 day old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
 
         <MapView.Marker
@@ -105,6 +148,12 @@ export default class MapScreen extends React.Component {
         style={styles.gifLogo}
         source={require('../assets/doggo.gif')}
       />
+      <MapView.Callout>
+          <View>
+            <Text>BARKY THE DOG</Text>
+            <Text>12 days old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
 
         <MapView.Marker
@@ -117,6 +166,12 @@ export default class MapScreen extends React.Component {
         style={styles.tinyLogo}
         source={require('./monkey.png')}
       />
+      <MapView.Callout>
+          <View>
+            <Text>CHOMPY THE MONKEY</Text>
+            <Text>7 days old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
         <MapView.Marker
         //randwick
@@ -128,6 +183,12 @@ export default class MapScreen extends React.Component {
         style={styles.tinyLogo}
         source={require('./monkey.png')}
       />
+      <MapView.Callout>
+          <View>
+            <Text>CHIMPY THE MONKEY</Text>
+            <Text>13 days old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
         <MapView.Marker
         //randwick
@@ -146,6 +207,12 @@ export default class MapScreen extends React.Component {
         }}
       
       />
+      <MapView.Callout>
+          <View>
+            <Text>MEOW THE KITTEN</Text>
+            <Text>0 days old</Text>
+          </View>
+        </MapView.Callout>
         </MapView.Marker>
 
         <MapView.Marker isVisible={this.state.isVisible}
@@ -154,7 +221,7 @@ export default class MapScreen extends React.Component {
           latitude: -33.9142,
           longitude: 151.0931,
         }}> 
-
+{/* 
         <View  style={styles.mapViv} >
         <Text>What adventure do you want to go on?</Text>
         <View style={styles.controlSpace}>
@@ -175,7 +242,7 @@ export default class MapScreen extends React.Component {
             />
           </View>
         </View>
-      </View>
+      </View> */}
 
 
         </MapView.Marker>
@@ -237,9 +304,6 @@ export default class MapScreen extends React.Component {
       />
         </MapView.Marker>
 
-
-
-
         <MapView.Marker
         coordinate={{
           latitude: -33.849300,
@@ -281,12 +345,31 @@ export default class MapScreen extends React.Component {
         source={require('../assets/cat.gif')}
       />
         </MapView.Marker>
+
         </MapView>
+
+        <View>
+          {/* <ModalTester/> */}
+        </View>
+        <View
+            style={{
+                position: 'absolute',//use absolute position to show button on top of the map
+                top: '85%', //for center align
+                alignSelf: 'center' //for align to right
+                // alignSelf: 'center'
+            }}
+        >
+          <ModalTester/>
+            {/* <Button style={{ borderWidth: 2, alignItems:'right',justifyContent:'right'}} title="Konnect!" onPress={() => console.log("This is not fired")}/> */}
+        </View>
+
+    </View>
+       
 
 
 
       
-    </View>
+   
     );
   }
 
@@ -353,3 +436,9 @@ const styles = StyleSheet.create({
 
 })
 
+        {/*<View style={styles.modal}>
+             <Overlay isVisible={this.state.isVisible} >
+             <Text>hi!</Text>
+             </Overlay>
+           </View> */}
+          //  <ModalTester/>
