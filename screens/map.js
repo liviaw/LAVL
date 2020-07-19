@@ -55,7 +55,7 @@ export default class MapScreen extends React.Component {
         >
         <Image
         style={styles.gifLogo}
-        source={require('./puppy.png')}
+        source={require('../assets/doggo.gif')}
       />
       </MapView.Marker>
 
@@ -111,8 +111,8 @@ export default class MapScreen extends React.Component {
           longitude: 150.182440,
         }}> 
           <Image
-        style={styles.gifLogo}
-        source={require('../assets/doggo.gif')}
+        style={styles.myLogo}
+        source={require('./puppy.png')}
       />
       <MapView.Callout>
           <View>
@@ -146,7 +146,7 @@ export default class MapScreen extends React.Component {
         }}> 
           <Image
         style={styles.gifLogo}
-        source={require('../assets/doggo.gif')}
+        source={require('./hamster.png')}
       />
       <MapView.Callout>
           <View>
@@ -393,6 +393,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     position: 'absolute',
 
+  },
+  myLogo: {
+    width:170,
+    height:170,
   },
   gifLogo: {
     width:100,
